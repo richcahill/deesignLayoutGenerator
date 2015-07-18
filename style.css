@@ -1,14 +1,25 @@
 .frameOne {
-
+	position: absolute;
+	width: 296px;
+	height: 210px;
 }
 
-.frameTwo {
-
+.leftPage {
+	position: absolute;
+	left: 4px;
+	top: 4px;
+	width: 140px;
+	height: 202px;
 }
 
-.frameThree {
-
+.rightPage {
+	position: absolute;
+	right: 4px;
+	top: 4px;
+	width: 140px;
+	height: 202px;
 }
+
 
 /* TEST CLASSES - COLOURS ETC */
 
