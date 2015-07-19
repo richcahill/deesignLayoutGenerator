@@ -15,7 +15,7 @@ function deesignGenerate(){
     		var smallImg2Left = randomBetween(0, 238);
     		var smallImg2Top = randomBetween(0, 148);
 
-    		var titleLeft = randomBetween(0, 208);
+    		var titleLeft = randomBetween(0, 200);
     		var titleTop = randomBetween(0, 156);
 
     		var descriptionLeft = randomBetween(0, 158);
@@ -51,6 +51,12 @@ function deesignGenerate(){
 				 + "description Top: " + descriptionTop
 
 			);
+
+
+
+			if ($('.title').overlaps('.description')) {
+				console.log("overlap ahoy");
+			};
 		}
 
 
@@ -61,7 +67,7 @@ $( document ).ready(function() {
 
     $(".fullPage").click(function() {
    	deesignGenerate();
-});
+	});
 
 
 });
