@@ -82,12 +82,16 @@ body {
 
 }
 
+/* TESTING COLLISION DETECTION */
+
+.boxes {
+    position: absolute;
+    color: white;
+}
+
 
 /* TEST CLASSES - COLOURS ETC */
 
-.text {
-	padding: 3px;
-}
 
 .red {
 	background-color: #FF6561;
