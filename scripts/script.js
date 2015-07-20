@@ -54,9 +54,6 @@ function deesignGenerate(){
 
 
 
-			if ($('.title').overlaps('.description')) {
-				console.log("overlap ahoy");
-			};
 		}
 
 
