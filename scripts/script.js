@@ -1,67 +1,67 @@
 
 // Random number between range function.
-function randomBetween(min,max)
-{
+function randomBetween(min,max){
+    
     return Math.floor(Math.random()*(max-min+1)+min);
+
 }
 
+// Empty arrays setup for no div collisions
+
+
+var posXmin = [];
+var posXmax = [];
+var posYmin = [];
+var posYmax = [];
+
+var divs = ["mainImg","smallImg1","smallImg2"];
+
+// Random left 
+
+function randomPos(selector,axis){
+
+	var foo = $(".fullPage").css(axis);
+	var foo = parseInt(foo, 10);
+
+	var bar = $('.' + selector).css(axis);
+	var bar = parseInt(bar, 10);
+
+	var margin = randomBetween(0, foo - bar);
+
+	if (axis == "width") {
+		$('.' + selector).css("left", margin + "px");
+		posXmin.push(margin);
+		posXmax.push(margin + bar)
+	} else if (axis == "height") {
+		$('.' + selector).css("top", margin + "px");
+		posYmin.push(margin);
+		posYmax.push(margin + bar)
+	}
+
+}
+
+
 function deesignGenerate(){
-    		var mainImgLeft = randomBetween(0, 188);
-    		var mainImgTop = randomBetween(0, 88);
 
-    		var smallImg1Left = randomBetween(0, 238);
-    		var smallImg1Top = randomBetween(0, 148);
-
-    		var smallImg2Left = randomBetween(0, 238);
-    		var smallImg2Top = randomBetween(0, 148);
-
-    		var titleLeft = randomBetween(0, 200);
-    		var titleTop = randomBetween(0, 156);
-
-    		var descriptionLeft = randomBetween(0, 158);
-    		var descriptionTop = randomBetween(0, 148);
-
-			$(".mainImg").css("left", mainImgLeft);
-			$(".mainImg").css("top", mainImgTop);
-
-			$(".smallImg1").css("left", smallImg1Left);
-			$(".smallImg1").css("top", smallImg1Top);
-
-			$(".smallImg2").css("left", smallImg2Left);
-			$(".smallImg2").css("top", smallImg2Top);
+	// empty the storage arrays
+	posXmin = [];
+	posXmax = [];
+	posYmin = [];
+	posYmax = [];
 	
-			$(".title").css("left", titleLeft);
-			$(".title").css("top", titleTop);
 
-			$(".description").css("left", descriptionLeft);
-			$(".description").css("top", descriptionTop);
-
-			$('.showAndTell').empty();
-
-			$(".showAndTell").append( 
-				"mainImg Left: " + mainImgLeft + "<br />"
-				 + "mainImg Top: " + mainImgTop + "<br /><br />"
-				 + "smallImg1 Left: " + smallImg1Left + "<br />"
-				 + "smallImg1 Top: " + smallImg1Top + "<br /><br />"
-				 + "smallImg2 Left: " + smallImg2Left + "<br />"
-				 + "smallImg2 Top: " + smallImg2Top + "<br /><br />"
-				 + "title Left: " + titleLeft + "<br />"
-				 + "title Top: " + titleTop + "<br /><br />"
-				 + "description Left: " + descriptionLeft + "<br />"
-				 + "description Top: " + descriptionTop
-
-			);
+	for (var i = 0; i < divs.length; i++) {
+		randomPos(divs[i],"width");
+		randomPos(divs[i],"height")
+		console.log("min: " + posXmin[i] + "," + posYmin[i] + "   " + "max: " + posXmax[i] + "," + posYmax[i]);
+	};
 
 
-
-			if ($('.title').overlaps('.description')) {
-				console.log("overlap ahoy");
-			};
-		}
+}
 
 
 $( document ).ready(function() {
-    console.log( "jQuery is firing. #gogogogogo" );
+    console.log( "jQuery is firing" );
 
     deesignGenerate();
 
