@@ -1,4 +1,11 @@
 
+
+// PUT ALL THE CLASSES YOU WANT RANDOMISED IN HERE
+
+var divs = ["mainImg","smallImg1"];
+
+
+
 // Random number between range function.
 function randomBetween(min,max){
     
@@ -14,28 +21,52 @@ var posXmax = [];
 var posYmin = [];
 var posYmax = [];
 
-var divs = ["mainImg","smallImg1","smallImg2"];
-
 // Random left 
 
-function randomPos(selector,axis){
+function randomPos(selector,axis,i){
 
-	var foo = $(".fullPage").css(axis);
-	var foo = parseInt(foo, 10);
+	console.log(i);
 
-	var bar = $('.' + selector).css(axis);
-	var bar = parseInt(bar, 10);
 
-	var margin = randomBetween(0, foo - bar);
+	// So checks can be run, recreate function here.
+	function awesome(selector,axis,i){
 
-	if (axis == "width") {
-		$('.' + selector).css("left", margin + "px");
-		posXmin.push(margin);
-		posXmax.push(margin + bar)
-	} else if (axis == "height") {
-		$('.' + selector).css("top", margin + "px");
-		posYmin.push(margin);
-		posYmax.push(margin + bar)
+		var foo = $(".fullPage").css(axis);
+		var foo = parseInt(foo, 10);
+
+		var bar = $('.' + selector).css(axis);
+		var bar = parseInt(bar, 10);
+
+		var margin = randomBetween(0, foo - bar);
+
+		if (axis == "width") {
+			$('.' + selector).css("left", margin + "px");
+			posXmin[i] = margin;
+			posXmax[i] = margin + bar;
+			// posXmin.push(margin);
+			// posXmax.push(margin + bar)
+		} else if (axis == "height") {
+			$('.' + selector).css("top", margin + "px");
+			posYmin[i] = margin;
+			posYmax[i] = margin + bar;
+			// posYmin.push(margin);
+			// posYmax.push(margin + bar)
+		}
+
+	}
+
+	awesome(selector,axis,i);
+
+
+	if (posXmin[i-1] != null){
+			
+		console.log("checking overlap");
+
+
+		while (posXmin[i] > posXmin[i-1] || posYmin[i] > posYmin[i-1] ) {
+			awesome(selector,axis,i);
+		}	
+
 	}
 
 }
@@ -51,14 +82,17 @@ function deesignGenerate(){
 	
 
 	for (var i = 0; i < divs.length; i++) {
-		randomPos(divs[i],"width");
-		randomPos(divs[i],"height")
-		console.log("min: " + posXmin[i] + "," + posYmin[i] + "   " + "max: " + posXmax[i] + "," + posYmax[i]);
+
+		randomPos(divs[i],"width",i);
+		randomPos(divs[i],"height",i);
+		
+		
 	};
 
 
 }
 
+// ACTUALLY RUN THE DAMN THING
 
 $( document ).ready(function() {
     console.log( "jQuery is firing" );
