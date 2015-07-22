@@ -1,8 +1,5 @@
 
-<<<<<<< HEAD
-=======
 
->>>>>>> noCollision
 // PUT ALL THE IDs YOU WANT RANDOMISED IN HERE
 
 var divs = ["mainImg","smallImg1","smallImg2","title","description"];
@@ -61,7 +58,6 @@ function testDivOverlaps () {
 	
 }
 
-<<<<<<< HEAD
 
 
 // Random left 
@@ -77,23 +73,6 @@ function randomPos(selector,axis){
 
 		var margin = randomBetween(0, foo - bar);
 
-=======
-
-
-// Random left 
-
-function randomPos(selector,axis){
-
-
-		var foo = $(".fullPage").css(axis);
-		var foo = parseInt(foo, 10);
-
-		var bar = $('#' + selector).css(axis);
-		var bar = parseInt(bar, 10);
-
-		var margin = randomBetween(0, foo - bar);
-
->>>>>>> noCollision
 		if (axis == "width") {
 			$('#' + selector).css("left", margin + "px");
 			$(".showAndTell").append(selector + " left: " + margin + "<br />");
@@ -102,19 +81,11 @@ function randomPos(selector,axis){
 			$(".showAndTell").append(selector + " top: " + margin + "<br /><br />");
 		}
 }
-<<<<<<< HEAD
 
 
 function deesignGenerate(){
 
 
-=======
-
-
-function deesignGenerate(){
-
-
->>>>>>> noCollision
 	
 	for (var i = 0; i < divs.length; i++) {
 
@@ -156,7 +127,3 @@ $( document ).ready(function() {
 	});
 
 });
-<<<<<<< HEAD
-=======
-
->>>>>>> noCollision
