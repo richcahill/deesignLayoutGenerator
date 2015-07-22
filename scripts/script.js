@@ -7,6 +7,7 @@ var divs = ["mainImg","smallImg1","smallImg2","title","description"];
 
 
 
+
 // Random number between range function.
 function randomBetween(min,max){
     
@@ -51,7 +52,7 @@ function testDivOverlaps () {
 
 			
 	}
-	console.log(count);
+	console.log(count - divs.length);
 	if (count > (divs.length)) {
 		return true;
 	};
