@@ -64,6 +64,7 @@ function testDivOverlaps () {
 
 function randomPos(selector,axis){
 
+
 		var foo = $(".fullPage").css(axis);
 		var foo = parseInt(foo, 10);
 
@@ -74,8 +75,10 @@ function randomPos(selector,axis){
 
 		if (axis == "width") {
 			$('#' + selector).css("left", margin + "px");
+			$(".showAndTell").append(selector + " left: " + margin + "<br />");
 		} else if (axis == "height") {
 			$('#' + selector).css("top", margin + "px");
+			$(".showAndTell").append(selector + " top: " + margin + "<br /><br />");
 		}
 }
 
@@ -92,6 +95,8 @@ function deesignGenerate(){
 	}
 
 	while(testDivOverlaps()){
+
+		$(".showAndTell").empty();
 		for (var i = 0; i < divs.length; i++) {
 
 			randomPos(divs[i],"width",i);
@@ -101,6 +106,10 @@ function deesignGenerate(){
 
 	}
 
+}
+
+function showAndTell (argument) {
+	// body...
 }
 
 // ACTUALLY RUN THE DAMN THING
