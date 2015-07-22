@@ -117,9 +117,6 @@ function showAndTell (argument) {
 
 $( document ).ready(function() {
     console.log( "jQuery is firing" );
-
-
-    deesignGenerate();
     
 
     $(".fullPage").click(function() {
