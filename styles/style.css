@@ -47,35 +47,35 @@ body {
 
 /* Elements */
 
-.mainImg {
+#mainImg {
 	position: absolute;
 	width: 100px;
 	height: 100px;
 
 }
 
-.smallImg1 {
+#smallImg1 {
 	position: absolute;
 	width: 50px;
 	height: 50px;
 
 }
 
-.smallImg2 {
+#smallImg2 {
 	position: absolute;
 	width: 50px;
 	height: 50px;
 
 }
 
-.title {
+#title {
 	position: absolute;
 	width: 80px;
 	height: 40px;
 
 }
 
-.description {
+#description {
 	position: absolute;
 	width: 130px;
 	height: 50px;
