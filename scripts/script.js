@@ -121,7 +121,9 @@ $( document ).ready(function() {
 
     $(".fullPage").click(function() {
     	console.log("New layout");
+   		dconsole.time("gen");
    		deesignGenerate();
+   		console.timeEnd("gen");
 	});
 
 });
