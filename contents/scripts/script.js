@@ -10,7 +10,7 @@ var divs = ["title", "project1","project2","project3","project4","project5","pro
 
 // Random number between range function.
 function randomBetween(min,max){
-    
+
     return Math.floor(Math.random()*(max-min+1)+min);
 
 }
@@ -30,7 +30,7 @@ function collision($div1, $div2) {
 	var w2 = $div2.outerWidth(true);
 	var b2 = y2 + h2;
 	var r2 = x2 + w2;
-        
+
 	if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
 	return true;
 }
@@ -47,21 +47,21 @@ function testDivOverlaps () {
 			if (collision($("#"+divs[i]), $('#'+divs[k]))){
 				count++;
 			}
-			
+
 		}
 
-			
+
 	}
 	console.log(count - divs.length);
 	if (count > (divs.length)) {
 		return true;
 	};
-	
+
 }
 
 
 
-// Random left 
+// Random left
 
 function randomPos(selector,axis){
 
@@ -74,25 +74,25 @@ function randomPos(selector,axis){
 
 		var margin = randomBetween(0, foo - bar);
 
-		if (axis == "width") {
-			$('#' + selector).css("left", margin + "px");
-			$(".showAndTell").append(selector + " left: " + margin + "<br />");
-		} else if (axis == "height") {
-			$('#' + selector).css("top", margin + "px");
-			$(".showAndTell").append(selector + " top: " + margin + "<br /><br />");
-		}
+    if (axis == "width") {
+      $('#' + selector).css("left", margin + "px");
+      $(".showAndTell").append(selector + " left: " + (margin+5) + "<br />");
+    } else if (axis == "height") {
+      $('#' + selector).css("top", margin + "px");
+      $(".showAndTell").append(selector + " top: " + (margin+5) + "<br /><br />");
+    }
 }
 
 
 function deesignGenerate(){
 
 
-	
+
 	for (var i = 0; i < divs.length; i++) {
 
 		randomPos(divs[i],"width",i);
 		randomPos(divs[i],"height",i);
-			
+
 	}
 
 	while(testDivOverlaps()){
@@ -102,7 +102,7 @@ function deesignGenerate(){
 
 			randomPos(divs[i],"width",i);
 			randomPos(divs[i],"height",i);
-			
+
 		}
 
 	}
@@ -117,7 +117,7 @@ function showAndTell (argument) {
 
 $( document ).ready(function() {
     console.log( "jQuery is firing" );
-    
+
 
     $(".fullPage").click(function() {
     	console.log("New layout");
