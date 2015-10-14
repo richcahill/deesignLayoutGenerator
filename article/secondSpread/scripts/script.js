@@ -2,7 +2,7 @@
 
 // PUT ALL THE IDs YOU WANT RANDOMISED IN HERE
 
-var divs = ["smallImage", "quote","textBlock1","textBlock2","textBlock3","textBlock4"];
+var divs = ["smallImage", "quote","textBlock1","textBlock2","textBlock3"];
 
 
 
