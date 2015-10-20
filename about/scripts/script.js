@@ -112,7 +112,7 @@ $( document ).ready(function() {
     console.log( "jQuery is firing" );
 
 
-    $(".fullPage").click(function() {
+    $(".rightPage").click(function() {
     	console.log("New layout");
    		console.time("gen");
    		deesignGenerate();
