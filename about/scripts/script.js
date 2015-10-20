@@ -63,7 +63,7 @@ function testDivOverlaps () {
 function randomPos(selector,axis){
 
 
-		var foo = $(".fullPage").css(axis);
+		var foo = $(".rightPage").css(axis);
 		var foo = parseInt(foo, 10);
 
 		var bar = $('#' + selector).css(axis);
