@@ -50,6 +50,10 @@ function testDivOverlaps () {
 
 		}
 
+    if (collision($("#"+divs[i]), $('#middlemargin'))){
+      count++;
+    }
+
 
 	}
 	console.log(count - divs.length);
