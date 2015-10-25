@@ -14,16 +14,16 @@ body {
 
 .leftPage {
 	position: absolute;
-	left: 4px;
-	top: 4px;
+	left: 0px;
+	top: 0px;
 	width: 140px;
 	height: 202px;
 }
 
 .rightPage {
 	position: absolute;
-	right: 4px;
-	top: 4px;
+	left: 148px;
+	top: 0px;
 	width: 140px;
 	height: 202px;
 }
@@ -80,6 +80,13 @@ body {
 	width: 130px;
 	height: 50px;
 
+}
+
+#middlemargin {
+	position: absolute;
+	left: 140px;
+	width: 10px;
+	height: 202px;
 }
 
 

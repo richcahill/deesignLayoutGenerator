@@ -50,6 +50,12 @@ function testDivOverlaps () {
 
 		}
 
+    if ($("#"+divs[i]).hasClass("text")){
+      if (collision($("#"+divs[i]), $('#middlemargin'))){
+        count++;
+      }
+    }
+
 
 	}
 	console.log(count - divs.length);
@@ -61,7 +67,7 @@ function testDivOverlaps () {
 
 
 
-// Random left
+// Random position
 
 function randomPos(selector,axis){
 
