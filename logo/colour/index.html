@@ -19,21 +19,43 @@ body {
        url('fonts/circular-bold.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.logo {
+  position:absolute;
+  left:30%;
+  margin-left:-240px;
+  top:30%;
+  margin-top:-120px;
+  width:480px;
+  height:240px;
+}
+
 .column{
   float:left;
-  width: 40px;
+  width: 120px;
 }
 
 .column div {
-  height: 40px;
+  height: 120px;
   width:100%;
   font-family: "circular-bold", helvetica, sans-serif;
   font-weight: 700;
-  font-size: 30pt;
-  color: white;
+  font-size: 90pt;
 }
 
 p {
+  color: white;
+}
+
+select {
+  position: absolute;
+  right: 20px;
+  top: 10px;
 }
 
 
@@ -84,53 +106,57 @@ $( document ).ready(function() {
 
 <div class="container">
 
-  <div class="column">
-    <div>
-      <p>d<p>
+  <div class ="logo">
+
+    <div class="column">
+
+      <div>
+        <p>d<p>
+      </div>
+      <div>
+          <p>s<p>
+      </div>
     </div>
-    <div>
-        <p>s<p>
+
+    <div class="column">
+      <div>
+        <p>e<p>
+      </div>
+      <div>
+        <p>i<p>
+      </div>
     </div>
-  </div>
-  <div class="column">
-    <div>
-      <p>e<p>
+
+    <div class="column">
+      <div>
+        <p>e<p>
+      </div>
+      <div>
+        <p>g<p>
+      </div>
     </div>
-    <div>
-      <p>i<p>
+
+    <div class="column">
+      <div>
+        <p>&nbsp;</p>
+      </div>
+      <div>
+        <p>n<p>
+      </div>
     </div>
-  </div>
-  <div class="column">
-    <div>
-      <p>e<p>
-    </div>
-    <div>
-      <p>g<p>
-    </div>
-  </div>
-  <div class="column">
-    <div>
-      <p></p>
-    </div>
-    <div>
-      <p>n<p>
-    </div>
+
   </div>
 
 </div>
 
-<div style="margin-left: 300px;">
-  <select name="" id="list">
-  <option value="#FF6561">Warm Red</option>
-  <option value="#5E567E">Comet</option>
-  <option value="#FF7CCF">Neon Pink</option>
-  <option value="#00A765">Crayon Green</option>
-   <option value="#FFE646">Paris Daisy</option>
-
-  </select>
+<select name="" id="list">
+  <option value="#FA675D">Warm Red</option>
+  <option value="#39499C">Reflex Blue</option>
+  <option value="#00AC8C">Green</option>
+  <option value="#D1428D">Pink</option>
+</select>
 
 
-</div>
 
 </body>
 
