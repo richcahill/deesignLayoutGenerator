@@ -1,6 +1,8 @@
 <html>
 <head>
 
+  <title>&#128588;</title>
+
 <style type="text/css">
 
 @font-face {
@@ -11,7 +13,6 @@
        url('fonts/circular-bold.ttf')  format('truetype'), /* Safari, Android, iOS */
        url('fonts/circular-bold.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
-
 
 .container {
   width: 100%;
@@ -43,7 +44,11 @@
 }
 
 p {
-  color: black;
+  color: white;
+}
+
+iframe {
+  display: none;
 }
 
 
@@ -57,7 +62,7 @@ p {
 $( document ).ready(function() {
 
     var count = 1;
-    var mult = 1;
+    var mult = 0.01;
     var erratic = count * mult;
 
     function randNum(min,max)
@@ -72,10 +77,13 @@ $( document ).ready(function() {
           var randomNumber = randNum(1,(erratic*90))
           $(this).css("margin-top", randomNumber + "px");
         });
+        $('body').css('background-color',"#"+((1<<24)*Math.random()|0).toString(16));
         count++;
     }
 
-    randomise();
+    window.setInterval(function(){
+      randomise();
+    }, 485);
 
     setTimeout(function () {
       location.reload();
@@ -85,6 +93,7 @@ $( document ).ready(function() {
 
 
 </script>
+
 <div class="container">
 
 <div class ="logo">
@@ -129,6 +138,17 @@ $( document ).ready(function() {
 
 </div>
 
+<iframe width="200" height="150" src="https://www.youtube-nocookie.com/embed/5dQ1uvSxPTE?rel=0&amp;controls=0&amp;showinfo=0?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31652370-10', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </body>
 
 </html>
